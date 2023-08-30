@@ -19,11 +19,30 @@ camera2.position.setZ(50);
 
 renderer.render(scene, camAtual);
 
-const geometry = new THREE.TorusGeometry( 10, 3, 16, 100);
-const material = new THREE.MeshStandardMaterial( {color: 0xFF6347});
+const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+const material = new THREE.MeshStandardMaterial({ color: 0xFF6347 });
 const torus = new THREE.Mesh(geometry, material);
 
 scene.add(torus);
+
+// Carregar a textura usando THREE.TextureLoader
+
+const cubeGeometry = new THREE.BoxGeometry(10, 10, 10);
+
+const cubeTexture = new THREE.TextureLoader().load('bloco.jpg');
+
+const cubeMaterial = new THREE.MeshBasicMaterial({
+  map: cubeTexture,
+  color: new THREE.Color(0.35, 0.35, 0.35), // Cor básica do material
+  emissive: new THREE.Color(1, 1, 1) // Emissão (brilho) do material
+});
+
+const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+
+cube.position.set(0, 30, 0);
+
+scene.add(cube);
+
 
 const pointLight = new THREE.PointLight(0xffffff, 100);
 pointLight.position.set(0, 0, 0);
@@ -35,7 +54,7 @@ const lightHelper = new THREE.PointLightHelper(pointLight);
 const gridHelper = new THREE.GridHelper(200, 50);
 scene.add(lightHelper, gridHelper);
 
-const controls = new OrbitControls(camera, renderer.domElement)
+const controls = new OrbitControls(camera, renderer.domElement);
 const controls2 = new OrbitControls(camera2, renderer.domElement);
 
 function animate() {
@@ -44,6 +63,8 @@ function animate() {
   torus.rotation.x += 0.01;
   torus.rotation.y += 0.01;
   torus.rotation.z += 0.01;
+
+  cube.rotation.y +=0.005; 
 
   controls.update();
   controls2.update();
@@ -61,4 +82,5 @@ window.addEventListener('keydown', (event) => {
     case 'b':
       camAtual = camera2;
       break;
-}});
+  }
+});
