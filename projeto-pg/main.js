@@ -15,12 +15,15 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(30);
+
 camera2.position.setZ(50);
+camera2.position.setX(-20);
+camera2.position.setY(20);
 
 renderer.render(scene, camAtual);
 
 const geometry = new THREE.TorusGeometry( 10, 3, 16, 100);
-const material = new THREE.MeshStandardMaterial( {color: 0xFF6347});
+const material = new THREE.MeshStandardMaterial({color: 0xFF6347});
 const torus = new THREE.Mesh(geometry, material);
 
 scene.add(torus);
@@ -37,6 +40,9 @@ scene.add(lightHelper, gridHelper);
 
 const controls = new OrbitControls(camera, renderer.domElement)
 const controls2 = new OrbitControls(camera2, renderer.domElement);
+
+const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+scene.background = spaceTexture;
 
 function animate() {
   requestAnimationFrame(animate);
