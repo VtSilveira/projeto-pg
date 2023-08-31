@@ -5,7 +5,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 let ballRotation = 0; // Inicializa a rotação da bola em radians (0 radianos)
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const camera2 = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.5, 100);
+const camera2 = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.5, 3000);
 
 let camAtual = camera;
 
