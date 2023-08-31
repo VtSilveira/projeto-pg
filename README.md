@@ -8,9 +8,10 @@ Após instalado, siga as seguintes instruções:
 
 Rode o projeto usando npm:
 ```bash
+  git clone https://github.com/VtSilveira/projeto-pg/
   cd projeto-pg
   npm install vite
-  npm run dev
+  npm run dev 
 ```
 Após isso, deve abrir um servidor local, basta acessá-lo para ver o projeto.
 
