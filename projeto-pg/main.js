@@ -26,7 +26,6 @@ renderer.render(scene, camAtual);
 const geometry = new THREE.TorusGeometry( 10, 3, 16, 100);
 // const material = new THREE.MeshStandardMaterial({color: 0xFF6347});
 const material = new THREE.RawShaderMaterial( {
-
   uniforms: {
     time: { value: 1.0 }
   },
