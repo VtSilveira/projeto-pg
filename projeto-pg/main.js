@@ -27,6 +27,7 @@ const geometry = new THREE.TorusGeometry( 10, 3, 16, 100);
 const material = new THREE.MeshStandardMaterial({color: 0xFF6347});
 
 const torus = new THREE.Mesh(geometry, material);
+torus.position.set(-20,15,0);
 
 scene.add(torus);
 
@@ -79,10 +80,9 @@ scene.add(soccerBallGroup);
 
 
 const pointLight = new THREE.PointLight(0xffffff, 100);
-pointLight.position.set(0, 0, 0);
+pointLight.position.set(0, 10, 0);
 
-const ambientLight = new THREE.AmbientLight(0xfff00f);
-scene.add(pointLight, ambientLight);
+scene.add(pointLight);
 
 const lightHelper = new THREE.PointLightHelper(pointLight);
 const gridHelper = new THREE.GridHelper(200, 50);
