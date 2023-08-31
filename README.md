@@ -18,3 +18,4 @@ Após isso, deve abrir um servidor local, basta acessá-lo para ver o projeto.
 
 No projeto, é possível trocar de camera com as teclas 'a' e 'b', sendo que a câmera que começa é a do atalho 'a'.
 Também é possível explorar o projeto usando o mouse, segurando o clique e movendo.
+Além disso, ao usar as setinhas do teclado, é possível mover o objeto em formato de rosquinha.

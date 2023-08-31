@@ -25,9 +25,7 @@ renderer.render(scene, camAtual);
 
 const geometry = new THREE.TorusGeometry( 10, 3, 16, 100);
 const material = new THREE.MeshStandardMaterial({color: 0xFF6347});
-
 const torus = new THREE.Mesh(geometry, material);
-torus.position.set(-20,15,0);
 
 scene.add(torus);
 
@@ -94,6 +92,10 @@ const controls2 = new OrbitControls(camera2, renderer.domElement);
 const spaceTexture = new THREE.TextureLoader().load('space.jpg');
 scene.background = spaceTexture;
 
+let torusX = -20;
+let torusY = 15;
+let torusZ = 0;
+
 function animate() {
   requestAnimationFrame(animate);
 
@@ -101,17 +103,19 @@ function animate() {
   torus.rotation.y += 0.01;
   torus.rotation.z += 0.01;
 
+  torus.position.set(torusX, torusY, torusZ);
+
   cube.rotation.y +=0.005; 
 
   controls.update();
   controls2.update();
 
- // Atualize a rotação da bola (aumente o ângulo em radians a cada quadro)
- const rotationSpeed = 0.01; // Ajuste a velocidade de rotação conforme necessário
- ballRotation += rotationSpeed;
+  // Atualize a rotação da bola (aumente o ângulo em radians a cada quadro)
+  const rotationSpeed = 0.01; // Ajuste a velocidade de rotação conforme necessário
+  ballRotation += rotationSpeed;
 
- // Aplique a rotação à bola
- soccerBallGroup.rotation.set(0, ballRotation, 0);
+  // Aplique a rotação à bola
+  soccerBallGroup.rotation.set(0, ballRotation, 0);
 
   renderer.render(scene, camAtual);
 }
@@ -125,6 +129,18 @@ window.addEventListener('keydown', (event) => {
       break;
     case 'b':
       camAtual = camera2;
+      break;
+    case 'ArrowUp':
+      torusY += 0.5;
+      break;
+    case 'ArrowDown':
+      torusY -= 0.5;
+      break;
+    case 'ArrowLeft':
+      torusX -= 0.5;
+      break;
+    case 'ArrowRight':
+      torusX += 0.5;
       break;
   }
 });
