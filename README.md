@@ -49,6 +49,6 @@ O shader envia a posição (vPosition) e a cor (vColor) dos vértices para o fra
 
 Fragment Shader (fragmentShader):
 
-O fragment shader processa cada fragmento (pixel) que será renderizado na tela. Ele recebe as informações da posição do vértice interpoladas (varying vec3 vPosition) e a cor do vértice interpolada (varying vec4 vColor). Também recebe uma variável uniform float time que provavelmente é usada para criar uma animação baseada no tempo.
+O fragment shader processa cada fragmento (pixel) que será renderizado na tela. Ele recebe as informações da posição do vértice interpoladas (varying vec3 vPosition) e a cor do vértice interpolada (varying vec4 vColor).
 
 O shader foi aplicado sobre o objeto Torus.
