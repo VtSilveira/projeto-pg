@@ -39,7 +39,7 @@ Translação: O torus pode ser transladado sobre o espaço utilizando as setas d
 
 ## Câmeras
 
-O projeto possui um total de duas câmeras, sendo ambas câmeras móveis e rotáteis, sendo uma delas com um FOV de 75 graus e a outra 90 graus, ambas implementadas pelo Vitor Silveira.
+O projeto possui um total de duas câmeras, sendo ambas câmeras móveis e rotáteis, sendo uma delas com um FOV de 75 graus e renderiza uma distância de 1000px e a outra com um FOV de 90 graus, que renderiza uma distância de 3000px. Ambas implementadas pelo Vitor Silveira.
 
 ## Shader (RawShaderMaterial)
 
